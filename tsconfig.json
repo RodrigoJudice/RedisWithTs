@@ -1,19 +1,22 @@
 {
 	"ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  },
+		"compilerOptions": {
+			"module": "commonjs"
+		}
+	},
 	"compilerOptions": {
 		"moduleResolution": "node",
 		"module": "es2020",
-		"lib": ["es2021", "DOM"],
+		"lib": [
+			"es2021",
+			"DOM"
+		],
 		"target": "es2021",
 		/**
 			svelte-preprocess cannot figure out whether you have a value or a type, so tell TypeScript
 			to enforce using \`import type\` instead of \`import\` for Types.
 			*/
-		"importsNotUsedAsValues": "error",
+		"verbatimModuleSyntax": true,
 		"isolatedModules": true,
 		"resolveJsonModule": true,
 		/**
@@ -28,11 +31,24 @@
 		"allowJs": true,
 		"checkJs": true,
 		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"],
-			"$services": ["src/services"],
-			"$services/*": ["src/services/*"]
+			"$lib": [
+				"src/lib"
+			],
+			"$lib/*": [
+				"src/lib/*"
+			],
+			"$services": [
+				"src/services"
+			],
+			"$services/*": [
+				"src/services/*"
+			]
 		}
 	},
-	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
+	"include": [
+		"src/**/*.d.ts",
+		"src/**/*.js",
+		"src/**/*.ts",
+		"src/**/*.svelte"
+	]
 }
